@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout</title>
+  <style>
+    /* 通用样式 */
+    * {
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .container {
+      width: 1200px;
+      border: 1px solid black;
+      margin: 0 auto;
+      font-size: 0;
+    }
+
+    .container>div {
+      width: 350px;
+      height: 300px;
+      border: 1px solid red;
+      font-size: 20px;
+    }
+
+    /* table */
+    #table td {
+      height: 300px;
+      border: 1px solid red;
+    }
+
+    /* inline-block */
+    #inline-block>div {
+      display: inline-block;
+      margin-right: 75px;
+    }
+
+    #inline-block>div:nth-child(3n) {
+      margin-right: -75px;
+    }
+
+    /* float */
+    #float>div {
+      float: left;
+      margin-right: 75px;
+    }
+
+    #float>div:last-child {
+      margin-right: -75px;
+    }
+
+    #float::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    /* flex */
+    #flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* column */
+    #column {
+      columns: 3;
+      column-gap: 75px;
+    }
+
+    /* grid */
+    #grid {
+      height: 300px;
+      display: grid;
+      grid-template-columns: 350px 75px 350px 75px 350px;
+      grid-template-rows: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>table 实现布局</h2>
+  <table class="container" id="table" cellspacing="0px">
+    <tr>
+      <td>a</td>
+      <td>b</td>
+      <td>c</td>
+    </tr>
+  </table>
+
+  <h2>inline-block 实现布局</h2>
+  <div class="container" id="inline-block">
+    <div>a</div>
+    <div>b</div>
+    <div>c</div>
+  </div>
+
+  <h2>float 实现布局</h2>
+  <div class="container" id="float">
+    <div>a</div>
+    <div>b</div>
+    <div>c</div>
+  </div>
+
+  <h2>flex 实现布局</h2>
+  <div class="container" id="flex"">
+    <div>a</div>
+    <div>b</div>
+    <div>c</div>
+  </div>
+
+  <h2>column 实现布局</h2>
+  <div class=" container" id="column"">
+    <div>a</div>
+    <div>b</div>
+    <div>c</div>layout
+  </div>
+
+  <h2>grid 实现布局</h2>
+  <p style="text-align: center;"><a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank">阮一峰教程</a></p>
+  <div class=" container" id="grid">
+    <div>a</div>
+    <span></span>
+    <div>b</div>
+    <span></span>
+    <div>c</div>
+    <span></span>
+  </div>
+</body>
+
+</html>
